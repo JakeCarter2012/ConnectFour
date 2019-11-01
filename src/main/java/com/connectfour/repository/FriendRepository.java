@@ -10,11 +10,11 @@ import com.connectfour.dto.FriendDTO;
 
 @Repository
 public class FriendRepository {
-    private SessionFactory SessionFactory;
+    private SessionFactory sessionFactory;
     
     @Autowired
     public void setSessionFactory(SessionFactory sessionFactory)
     {
-        this.SessionFactory = sessionFactory;
+        this.sessionFactory = sessionFactory;
     }
 }

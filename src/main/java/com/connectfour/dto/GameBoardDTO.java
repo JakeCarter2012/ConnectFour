@@ -3,7 +3,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class GameBoard {
+public class GameBoardDTO {
     @Id
     private int GameId;
     @Id
@@ -11,12 +11,12 @@ public class GameBoard {
     @Id
     private short TokenY;
     
-    public GameBoard()
+    public GameBoardDTO()
     {
         super();
     }
     
-    public GameBoard(int id, short x, short y)
+    public GameBoardDTO(int id, short x, short y)
     {
         this.GameId = id;
         this.TokenX = x;

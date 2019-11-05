@@ -1,10 +1,13 @@
 package com.connectfour.dto;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity
 public class GameDTO {
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int GameId;
     private int PlayerOne;
     private int PlayerTwo;

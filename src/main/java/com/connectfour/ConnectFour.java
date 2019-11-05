@@ -8,7 +8,7 @@ public class ConnectFour {
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
         UserService userService = (UserService)context.getBean("userService");
         short s = 0;
-        userService.addUser(0, "phil", "password", s, "grey", "red", "yellow");
+        userService.addUser(0, "billNYEt", "password", s, "grey", "red", "yellow");
         context.close();
     }
 }

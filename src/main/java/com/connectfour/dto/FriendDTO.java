@@ -1,8 +1,10 @@
 package com.connectfour.dto;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 
 @Entity
+@IdClass(FriendPK.class)
 public class FriendDTO {
     @Id
     private int FriendOne;

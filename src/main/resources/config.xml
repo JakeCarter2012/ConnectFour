@@ -29,7 +29,7 @@
         <property name="hibernateProperties">
             <value>
                 hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
-                hibernate.hbm2ddl.auto=create
+                hibernate.hbm2ddl.auto=update
                 hibernate.show_sql=true
             </value>
         </property>

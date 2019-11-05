@@ -1,10 +1,13 @@
 package com.connectfour.dto;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity
 public class UserDTO {
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int UserId;
     private String UserName;
     private String UserPassword;

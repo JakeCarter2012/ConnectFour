@@ -15,6 +15,36 @@ public class GameBoardPK implements Serializable{
         this.TokenY = y;
     }
     
+    public void setGameId(int id)
+    {
+        this.GameId = id;
+    }
+    
+    public int getGameId()
+    {
+        return this.GameId;
+    }
+    
+    public void setTokenX(short x)
+    {
+        this.TokenX = x;
+    }
+    
+    public short getTokenX()
+    {
+        return this.TokenX;
+    }
+    
+    public void setTokenY(short y)
+    {
+        this.TokenX = y;
+    }
+    
+    public short getTokenY()
+    {
+        return this.TokenY;
+    }
+        
     @Override
     public boolean equals(Object obj)
     {

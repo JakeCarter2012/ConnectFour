@@ -25,12 +25,50 @@ public class GameDTO {
         this.Turn = turn;
     }
     
+    public void setGameId(int id)
+    {
+        this.GameId = id;
+    }
+    
+    public int getGameId()
+    {
+        return this.getGameId();
+    }
+    
+    public void setPlayerOne(int player)
+    {
+        this.PlayerOne = player;
+    }
+    
+    public int getPlayerOne()
+    {
+        return this.PlayerOne;
+    }
+    
+    public void setPlayerTwo(int player)
+    {
+        this.PlayerTwo = player;
+    }
+    
+    public int getPlayerTwo()
+    {
+        return this.PlayerTwo;
+    }
+    
+    public void setTurn(boolean turn)
+    {
+        this.Turn = turn;
+    }
+    
+    public boolean getTurn()
+    {
+        return this.Turn;
+    }
+    
     @Override
     public String toString()
     {
         return "Games [GameId =" + this.GameId + ", PlayerOne=" + this.PlayerOne
                 + ", PlayerTwo=" + this.PlayerTwo + ", Turn=" + this.Turn + "]";
     }
-    
-    
 }

@@ -1,30 +1,36 @@
 package com.connectfour.dto;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "Users")
 public class UserDTO {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @JsonProperty("UserId")
     private int UserId;
+    @JsonProperty("UserName")
     private String UserName;
+    @JsonProperty("UserPassword")
     private String UserPassword;
+    @JsonProperty("Wins")
     private short Wins;
+    @JsonProperty("BoardColor")
     private String BoardColor;
+    @JsonProperty("MyColor")
     private String MyColor;
+    @JsonProperty("OpponentColor")
     private String OpponentColor;
     
-    public UserDTO()
-    {
-        super();
-    }
+    public UserDTO() {}
     
     public UserDTO(int id, String name, String password, short wins,
             String boardColor, String myColor, String opponentColor)
     {
-        super();
         this.UserId = id;
         this.UserName = name;
         this.UserPassword = password;
@@ -34,10 +40,80 @@ public class UserDTO {
         this.OpponentColor = opponentColor;
     }
     
+    public void setUserId(int id)
+    {
+        this.UserId = id;
+    }
+    
+    public int getUserId()
+    {
+        return this.UserId;
+    }
+    
+    public void setUserName(String name)
+    {
+        this.UserName = name;
+    }
+    
+    public String getUserName()
+    {
+        return this.UserName;
+    }
+    
+    public void setUserPassword(String password)
+    {
+        this.UserPassword = password;
+    }
+    
+    public String getUserPassword()
+    {
+        return this.UserPassword;
+    }
+    
+    public void setWins(short wins)
+    {
+        this.Wins = wins;
+    }
+    
+    public short getWins()
+    {
+        return this.Wins;
+    }
+    
+    public void setBoardColor(String color)
+    {
+        this.BoardColor = color;
+    }
+    
+    public String getBoardColor()
+    {
+        return this.BoardColor;
+    }
+    
+    public void setMyColor(String color)
+    {
+        this.MyColor = color;
+    }
+    
+    public String getMyColor()
+    {
+        return this.MyColor;
+    }
+    
+    public void setOpponentColor(String color)
+    {
+        this.OpponentColor = color;
+    }
+    
+    public String getOpponentColor()
+    {
+        return this.OpponentColor;
+    }
+    
     @Override
     public String toString()
     {
-        return "Users [UserId=" + this.UserId + ", UserName=" + this.UserName
+        return "UserDTO [UserId=" + this.UserId + ", UserName=" + this.UserName
                 + ", UserPassword=" + this.UserPassword + ", Wins=" + this.Wins
                 + ", BoardColor=" + this.BoardColor + ", MyColor="
                 +this.MyColor + ", OpponentColor=" + this.OpponentColor + "]";

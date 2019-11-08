@@ -2,8 +2,10 @@ package com.connectfour.dto;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "GameBoards")
 @IdClass(GameBoardPK.class)
 public class GameBoardDTO {
     @Id

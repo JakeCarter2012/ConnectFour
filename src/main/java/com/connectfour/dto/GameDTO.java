@@ -15,14 +15,10 @@ public class GameDTO {
     private int PlayerTwo;
     private boolean Turn;
     
-    public GameDTO()
-    {
-        super();
-    }
+    public GameDTO() {}
     
     public GameDTO(int id, int playerOne, int playerTwo, boolean turn)
     {
-        super();
         this.GameId = id;
         this.PlayerOne = playerOne;
         this.PlayerTwo = playerTwo;
@@ -35,4 +31,6 @@ public class GameDTO {
         return "Games [GameId =" + this.GameId + ", PlayerOne=" + this.PlayerOne
                 + ", PlayerTwo=" + this.PlayerTwo + ", Turn=" + this.Turn + "]";
     }
+    
+    
 }

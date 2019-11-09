@@ -1,4 +1,5 @@
 package com.connectfour.dto;
+import com.connectfour.primaryKeys.GameBoardPK;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
@@ -14,14 +15,16 @@ public class GameBoardDTO {
     private short TokenX;
     @Id
     private short TokenY;
+    private int PlayedBy;
     
     public GameBoardDTO() {}
     
-    public GameBoardDTO(int id, short x, short y)
+    public GameBoardDTO(int id, short x, short y, int playedBy)
     {
         this.GameId = id;
         this.TokenX = x;
         this.TokenY = y;
+        this.PlayedBy = playedBy;
     }
     
     public void setGameId(int id)
@@ -54,10 +57,20 @@ public class GameBoardDTO {
         return this.TokenY;
     }
     
+    public void setPlayeddBy(int playedBy)
+    {
+        this.PlayedBy = playedBy;
+    }
+    
+    public int getPlayeddBy()
+    {
+        return this.PlayedBy;
+    }
+    
     @Override
     public String toString()
     {
         return "GameBoard [GameId=" + this.GameId + ", TokenX=" + this.TokenX
-                + ", TokenY" + this.TokenY + "]";
+                + ", TokenY" + this.TokenY + ", PlayedBy=" + this.PlayedBy + "]";
     }
 }

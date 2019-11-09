@@ -1,4 +1,4 @@
-package com.connectfour.dto;
+package com.connectfour.primaryKeys;
 import java.io.Serializable;
         
 public class GameBoardPK implements Serializable{

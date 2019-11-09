@@ -1,7 +1,5 @@
 package com.connectfour.repository;
-import com.connectfour.dto.UserDTO;
 import java.util.HashMap;
-import java.util.List;
 
 public interface UserRepository {
     public void addUser(int id, String name, String password, short wins,

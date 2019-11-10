@@ -1,5 +1,5 @@
 package com.connectfour.service;
-import com.connectfour.dto.GameBoardDTO;
+import com.connectfour.gameData.BoardPiece;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.connectfour.repository.GameBoardRepositoryImpl;
@@ -10,7 +10,7 @@ public class GameBoardServiceImpl implements GameBoardService{
     @Autowired
     GameBoardRepositoryImpl GameBoardRepo;
     
-    public List<GameBoardDTO> getGameBoard(int gameId)
+    public List<BoardPiece> getGameBoard(int gameId)
     {
         return GameBoardRepo.getGameBoard(gameId);
     }

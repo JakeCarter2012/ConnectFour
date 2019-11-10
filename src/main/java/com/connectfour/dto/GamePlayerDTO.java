@@ -1,5 +1,5 @@
 package com.connectfour.dto;
-import com.connectfour.primaryKeys.GameBoardPK;
+import com.connectfour.primaryKeys.GamePlayerPK;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "GamePlayers")
-@IdClass(GameBoardPK.class)
+@IdClass(GamePlayerPK.class)
 public class GamePlayerDTO {
     @Id
     private int GameId;

@@ -57,12 +57,12 @@ public class GameBoardDTO {
         return this.TokenY;
     }
     
-    public void setPlayeddBy(int playedBy)
+    public void setPlayedBy(int playedBy)
     {
         this.PlayedBy = playedBy;
     }
     
-    public int getPlayeddBy()
+    public int getPlayedBy()
     {
         return this.PlayedBy;
     }
@@ -72,5 +72,24 @@ public class GameBoardDTO {
     {
         return "GameBoard [GameId=" + this.GameId + ", TokenX=" + this.TokenX
                 + ", TokenY" + this.TokenY + ", PlayedBy=" + this.PlayedBy + "]";
+    }
+    
+    @Override
+    public boolean equals(Object obj)
+    {
+        if(obj == null || obj.getClass() != this.getClass())
+        {
+            return false;
+        }
+        
+        if(this.GameId == ((GameBoardDTO)obj).GameId && 
+                this.TokenX == ((GameBoardDTO)obj).TokenX &&
+                this.TokenY == ((GameBoardDTO)obj).TokenY &&
+                this.PlayedBy == ((GameBoardDTO)obj).PlayedBy)
+        {
+            return true;
+        }
+        
+        return false;
     }
 }

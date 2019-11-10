@@ -1,9 +1,13 @@
 package com.connectfour.primaryKeys;
 import java.io.Serializable;
+import javax.persistence.Id;
         
 public class GameBoardPK implements Serializable{
+    @Id
     protected int GameId;
+    @Id
     protected short TokenX;
+    @Id
     protected short TokenY;
     
     public GameBoardPK() {}

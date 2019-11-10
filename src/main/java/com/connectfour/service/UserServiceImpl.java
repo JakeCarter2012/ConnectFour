@@ -40,8 +40,8 @@ public class UserServiceImpl implements UserService{
         return UserRepo.changePassword(id, oldPassword, newPassword);
     }
     
-    public void addWin(int id, String userName)
+    public void addWin(int id)
     {
-        UserRepo.addWin(id, userName);
+        UserRepo.addWin(id);
     }
 }

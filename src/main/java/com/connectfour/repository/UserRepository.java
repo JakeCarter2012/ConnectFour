@@ -15,5 +15,5 @@ public interface UserRepository {
     
     public boolean changePassword(int id, String oldPassword, String newPassword);
     
-    public void addWin(int id, String userName);
+    public void addWin(int id);
 }

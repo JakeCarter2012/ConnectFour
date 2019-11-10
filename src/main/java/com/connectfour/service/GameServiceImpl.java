@@ -24,4 +24,19 @@ public class GameServiceImpl implements GameService{
     {
         return GameRepo.getPersonalGames(playerId);
     }
+    
+    public boolean forfeitGame(int gameID, int userId)
+    {
+        return GameRepo.forfeitGame(gameID, userId);
+    }
+    
+    public int getTurn(int gameId)
+    {
+        return GameRepo.getTurnId(gameId);
+    }
+    
+    public String getTurnName(int gameId)
+    {
+        return GameRepo.getTurnName(gameId);
+    }
 }

@@ -8,4 +8,10 @@ public interface GameRepository {
     public void endGame(int gameId);
     
     public List<PersonalGame> getPersonalGames(int playerId);
+    
+    public boolean forfeitGame(int gameID, int userId);
+    
+    public int getTurnId(int gameId);
+    
+    public String getTurnName(int gameId);
 }

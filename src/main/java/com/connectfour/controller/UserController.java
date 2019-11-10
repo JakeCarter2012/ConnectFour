@@ -21,8 +21,10 @@ public class UserController {
     @Autowired
     private UserService userService;
     
+    //Adds a new user, with 0  wins, a blue board, and red/yellow pieces as default values.
+    //TO USE: Send a JSON object with UserName and UserPassword elements
     @RequestMapping(value = "/addUser", method = RequestMethod.POST, consumes = "application/json")
-        public ResponseEntity<String> addUser(@RequestBody LoginForm loginForm)
+    public ResponseEntity<String> addUser(@RequestBody LoginForm loginForm)
     {
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
         userService.addUser(0, loginForm.getUserName(), loginForm.getUserPassword(),
@@ -31,6 +33,9 @@ public class UserController {
         return ResponseEntity.ok("User added succesfully");
     }
     
+    //Checks to see if the UserName and password match.
+    //If they do, returns the user's Id. Else, returns -1.
+    //TO USE: Send a JSON object with UserName and UserPassword
     @RequestMapping(value = "/login", method = RequestMethod.POST, consumes = "application/json")
     public ResponseEntity<Integer> getUserId(@RequestBody LoginForm loginForm)
     {
@@ -40,6 +45,8 @@ public class UserController {
         return ResponseEntity.ok(id);
     }
     
+    //Gets the user's preferences.
+    //TO USE: Send a JSON object with UserId and UserName
     @RequestMapping(value = "/preferences", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     public ResponseEntity<HashMap<String, String>> getUserPreferences(@RequestBody UserIdentificationForm idForm)
     {
@@ -49,6 +56,8 @@ public class UserController {
         return ResponseEntity.ok(preferences);
     }
     
+    //Gets the amount of wins for the requested user.
+    //TO USE: Send a JSON object with UserName
     @RequestMapping(value = "/wins", method = RequestMethod.POST, consumes = "application/json")
     public ResponseEntity<Integer> getUserWins(@RequestBody UserNameForm nameForm)
     {
@@ -58,6 +67,8 @@ public class UserController {
         return ResponseEntity.ok(wins);
     }
     
+    //Changes the board and pieces colors for the requested user.
+    //TO USE: Send a JSON object with UserId, UserName, BoardColor, MyColor, and OpponentColor
     @RequestMapping(value = "/changeColors", method = RequestMethod.PUT, consumes = "application/json")
     public ResponseEntity<String> changeUserColors(@RequestBody ColorChangeForm colorForm)
     {
@@ -68,6 +79,8 @@ public class UserController {
         return ResponseEntity.ok("Successfully changed colors.");
     }
     
+    //Changes the user's password if the old password matches.
+    //TO USE: Send a JSON object with UserId, OldPassword, and NewPassword
     @RequestMapping(value = "/changePassword", method = RequestMethod.PUT, consumes = "application/json")
     public ResponseEntity<Boolean> changeUserPassword(@RequestBody ChangePasswordForm passwordForm)
     {
@@ -76,14 +89,5 @@ public class UserController {
                 passwordForm.getOldPassword(), passwordForm.getNewPassword());        
         context.close();
         return ResponseEntity.ok(success);
-    }
-    
-    @RequestMapping(value = "/addWin", method = RequestMethod.PUT, consumes = "application/json")
-    public ResponseEntity<String> addWin(@RequestBody UserIdentificationForm idForm)
-    {
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
-        userService.addWin(idForm.getUserId(), idForm.getUserName());        
-        context.close();
-        return ResponseEntity.ok("Successfully added a win to " + idForm.getUserName());
     }
 }

@@ -1,10 +1,9 @@
 package com.connectfour.service;
-
-import com.connectfour.dto.GameBoardDTO;
+import com.connectfour.gameData.BoardPiece;
 import java.util.List;
 
 public interface GameBoardService {
-    public List<GameBoardDTO> getGameBoard(int gameId);
+    public List<BoardPiece> getGameBoard(int gameId);
     
     public void playPiece(int gameId, int playerId, short x, short y);
     

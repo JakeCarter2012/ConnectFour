@@ -1,5 +1,4 @@
 package com.connectfour.dto;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
@@ -10,20 +9,13 @@ import javax.persistence.Table;
 @Table(name = "Users")
 public class UserDTO {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @JsonProperty("UserId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int UserId;
-    @JsonProperty("UserName")
     private String UserName;
-    @JsonProperty("UserPassword")
     private String UserPassword;
-    @JsonProperty("Wins")
     private short Wins;
-    @JsonProperty("BoardColor")
     private String BoardColor;
-    @JsonProperty("MyColor")
     private String MyColor;
-    @JsonProperty("OpponentColor")
     private String OpponentColor;
     
     public UserDTO() {}

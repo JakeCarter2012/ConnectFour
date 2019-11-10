@@ -1,7 +1,12 @@
 package com.connectfour.primaryKeys;
 
-public class GamePlayerPK {
+import java.io.Serializable;
+import javax.persistence.Id;
+
+public class GamePlayerPK implements Serializable{
+    @Id
     private int GameId;
+    @Id
     private int UserId;
     
     public GamePlayerPK() {}

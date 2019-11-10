@@ -4,12 +4,11 @@ import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
-
 @Entity
 @Table(name = "Games")
 public class GameDTO {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Id   
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int GameId;
     private int Turn;
     
@@ -39,7 +38,7 @@ public class GameDTO {
     public int getTurn()
     {
         return this.Turn;
-    }  
+    }
     
     @Override
     public String toString()
